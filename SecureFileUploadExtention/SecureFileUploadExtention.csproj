@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <PackageIcon>index.png</PackageIcon>
+    <PackageIconUrl />
+    <PackageId>UploadFileExtentions</PackageId>
+    <Authors>Ashkan Noori</Authors>
+    <Description>a open source package for uploading and validating all file types in C # and .Net Core projects.
+With this package, you will no longer need to write code to upload files and validate them.
+This package includes static methods and parallel programming is used in its coding.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Copyright>https://AshkanNoodiDev.com</Copyright>
+    <RepositoryUrl>https://github.com/ashnoori11/UploadFileExtention_Asp.NetCore</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/ashnoori11/UploadFileExtention_Asp.NetCore</PackageProjectUrl>
+    <PackageTags>File,Upload,Secure,Extentions,Static,Async,Video,Image,pdf,DeleteFile,UploadFileExtention</PackageTags>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Ashkan\Desktop\index.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>UploadFileExtentions</id>
+    <version>1.0.0</version>
+    <authors>Ashkan Noori</authors>
+    <icon>index.png</icon>
+    <description>A complete package for uploading and validating all file types in C # and .Net Core projects.
+With this package, you will no longer need to write code to upload files and validate them.
+This package includes static methods and parallel programming is used in its coding.</description>
+    <dependencies>
+      <group targetFramework="net5.0" />
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net5.0">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="F:\myNugetPackages\SecureFileUpload\SecureFileUploadExtention\SecureFileUploadExtention\bin\Debug\net5.0\SecureFileUploadExtention.dll" target="lib\net5.0\SecureFileUploadExtention.dll" />
+    <file src="C:\Users\Ashkan\Desktop\index.png" target="index.png" />
+  </files>
+</package>
