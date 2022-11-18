@@ -11,11 +11,11 @@ A Library to perform file-related operations on the .net core applications
 
 ---------------------------------
 
-# [How to Install](https://www.nuget.org/packages/UploadFileExtentions/1.0.0) 
+# [How to Install](https://www.nuget.org/packages/UploadFileExtentions/2.0.0) 
 
-#### PackageManager : [Install-Package UploadFileExtentions -Version 1.0.0](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-powershell)
+#### PackageManager : [Install-Package UploadFileExtentions -Version 2.0.0](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-powershell)
 
-#### .Net CLI : [dotnet add package UploadFileExtentions --version 1.0.0](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-dotnet-cli)
+#### .Net CLI : [dotnet add package UploadFileExtentions --version 2.0.0](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-dotnet-cli)
 
 --------------------------------
 
@@ -43,11 +43,11 @@ A Library to perform file-related operations on the .net core applications
 
 > Upload and Delete Files
 
-- :octopus: UploadFileAsync(this IFormFile file, string path,string fileName="", bool generateNewFileName = false) returns UploadFileResult
+- :octopus: UploadFileAsync(this IFormFile file, string path,FileType type,string fileName="", bool generateNewFileName = false)
 
-- :snail: UploadFileBase64(this string base64,string path) void method
+- :snail: UploadFileBase64(this string base64,string path)
 
-- :whale: GetDeleteFileResult(string path) returns DeleteFileResult
+- :whale: void(string path)
 
 
 ---------------------------
@@ -57,32 +57,9 @@ A Library to perform file-related operations on the .net core applications
 > using SecureFileUploadExtention.FileSecurity;
 
 
-        public async Task<IActionResult> Index(IFormFile file,string path)
-        {
-            var uploadFileResult = await file.UploadFileAsync(path,file.Name,true);
-
-            bool? result = uploadFileResult.IsSuccess;
-            List<string> errors = uploadFileResult.Errors;
-            string newFileName = uploadFileResult.NewFileName;
-
-            return View();
-        }
-        
-        
-        
-       public async Task<IActionResult> Index(IFormFile file,string path)
-        {
-            var uploadFileResult = await file.UploadFileAsync(path,file.Name,true);
-            string newFileName = "";
-
-            if (uploadFileResult.IsSuccess == true) newFileName = uploadFileResult.NewFileName;
-            else
-            {
-                ViewBag.Errors= uploadFileResult.Errors;
-            }
-
-            return View(newFileName);
-        }
+IFormFile file=attachment;
+var uploadFileResult = await file.UploadFileAsync(path,FileType.Video,file.Name,true);
+            
 
 
 
