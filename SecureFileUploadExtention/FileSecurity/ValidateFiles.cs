@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using SecureFileUploadExtention.CustomResults;
-using SecureFileUploadExtention.Enums;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -503,43 +502,43 @@ namespace SecureFileUploadExtention.FileSecurity
         }
 
         /// <summary>
-        /// Receives file(any files include : images,videos,video,pdf...) then validates it and finally uploads the file in the path you specified
+        /// upload and validating files
         /// </summary>
         /// <param name="file"></param>
         /// <param name="path"></param>
+        /// <param name="type"></param>
         /// <param name="fileName"></param>
         /// <param name="generateNewFileName"></param>
-        /// <returns>UploadFileResult(bool _IsSuccess, string _NewFileName, List<string> _Errors)</returns>
-        public static async Task<UploadFileResult> UploadFileAsync(this IFormFile file, string path, string fileName = "", bool generateNewFileName = false)
+        /// <returns>UploadFileResult(bool IsSuccess, string NewFileName, List<string> Errors)</returns>
+        public static async Task<UploadFileResult> UploadFileAsync(this IFormFile file, FileType type, string path, string fileName = "", bool generateNewFileName = false)
         {
             try
             {
                 string FileExtension = Path.GetExtension(file.FileName);
-                string newFileName = string.IsNullOrWhiteSpace(fileName) == true ? file.FileName : fileName;
+                string newFileName = string.Empty;
+
                 if (generateNewFileName)
-                {
                     newFileName = $"{Guid.NewGuid()}{FileExtension}";
-                }
-                var types = FileType.Image;
-                bool result = true;
+                else
+                    newFileName = string.IsNullOrWhiteSpace(fileName) == true ? file.FileName : fileName;
 
                 if (Directory.Exists(path) == false)
-                {
                     Directory.CreateDirectory(path);
-                }
 
-                string fullPath = string.IsNullOrWhiteSpace(newFileName) == false ? $"{path}/{newFileName}" : $"{path}/{file.FileName}";
+                string fullPath = string.IsNullOrWhiteSpace(newFileName) == false ?
+                 $"{path}/{newFileName}" : $"{path}/{file.FileName}";
 
+                bool result = default;
                 using (var memory = new MemoryStream())
                 {
                     await file.CopyToAsync(memory);
-                    result = IsValidFile(memory.ToArray(), types, FileExtension.Replace('.', ' '));
+                    result = IsValidFile(memory.ToArray(), type, FileExtension.Replace('.', ' '));
+
                     if (!result)
                     {
-                        return new UploadFileResult(false, new List<string>() { "فایل انتخاب شده معتبر نمی باشد." });
+                        memory.Close();
+                        return new UploadFileResult(false, "invalid file type !");
                     }
-
-                    memory.Close();
                 }
 
                 using (var stream = new FileStream(fullPath, FileMode.Create))
@@ -547,53 +546,30 @@ namespace SecureFileUploadExtention.FileSecurity
                     await file.CopyToAsync(stream);
                 }
 
-                return new UploadFileResult(true, newFileName, null);
+                return new UploadFileResult(newFileName);
             }
             catch (Exception exp)
             {
-                return new UploadFileResult(false, new List<string>() { exp.Message });
+#if DEBUG
+                return new UploadFileResult(false, new List<string>() { exp.Message, exp.StackTrace });
+#else
+     return new UploadFileResult(false, "There was an error uploading the file");
+#endif
             }
         }
 
-        #region deleteFile
-
         /// <summary>
-        /// recive file path and if file existed , deletes file
+        /// removes any kind of files with file path
         /// </summary>
         /// <param name="path"></param>
         public static void DeleteFile(string path)
         {
             if (File.Exists(path))
-            {
                 File.Delete(path);
-            }
         }
 
         /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="path"></param>
-        /// <returns></returns>
-        public static DeleteFileResult GetDeleteFileResult(string path)
-        {
-            try
-            {
-                if (File.Exists(path))
-                {
-                    File.Delete(path);
-                }
-
-                return new DeleteFileResult(Result.Success, "");
-            }
-            catch (Exception exp)
-            {
-                return new DeleteFileResult(Result.Error, exp.Message);
-            }
-        }
-        #endregion
-
-        /// <summary>
-        /// Receives file as base64 then uploads the file in the path you specified
+        /// upload file with base64 string and path
         /// </summary>
         /// <param name="base64"></param>
         /// <param name="path"></param>
