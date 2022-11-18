@@ -1,0 +1,12 @@
+C:\MyNugets\UploadFile\UploadFileExtention_Asp.NetCore\SecureFileUploadExtention\bin\Debug\net6.0\SecureFileUploadExtention.deps.json
+C:\MyNugets\UploadFile\UploadFileExtention_Asp.NetCore\SecureFileUploadExtention\bin\Debug\net6.0\SecureFileUploadExtention.dll
+C:\MyNugets\UploadFile\UploadFileExtention_Asp.NetCore\SecureFileUploadExtention\bin\Debug\net6.0\SecureFileUploadExtention.pdb
+C:\MyNugets\UploadFile\UploadFileExtention_Asp.NetCore\SecureFileUploadExtention\obj\Debug\net6.0\SecureFileUploadExtention.csproj.AssemblyReference.cache
+C:\MyNugets\UploadFile\UploadFileExtention_Asp.NetCore\SecureFileUploadExtention\obj\Debug\net6.0\SecureFileUploadExtention.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyNugets\UploadFile\UploadFileExtention_Asp.NetCore\SecureFileUploadExtention\obj\Debug\net6.0\SecureFileUploadExtention.AssemblyInfoInputs.cache
+C:\MyNugets\UploadFile\UploadFileExtention_Asp.NetCore\SecureFileUploadExtention\obj\Debug\net6.0\SecureFileUploadExtention.AssemblyInfo.cs
+C:\MyNugets\UploadFile\UploadFileExtention_Asp.NetCore\SecureFileUploadExtention\obj\Debug\net6.0\SecureFileUploadExtention.csproj.CoreCompileInputs.cache
+C:\MyNugets\UploadFile\UploadFileExtention_Asp.NetCore\SecureFileUploadExtention\obj\Debug\net6.0\SecureFileUploadExtention.dll
+C:\MyNugets\UploadFile\UploadFileExtention_Asp.NetCore\SecureFileUploadExtention\obj\Debug\net6.0\refint\SecureFileUploadExtention.dll
+C:\MyNugets\UploadFile\UploadFileExtention_Asp.NetCore\SecureFileUploadExtention\obj\Debug\net6.0\SecureFileUploadExtention.pdb
+C:\MyNugets\UploadFile\UploadFileExtention_Asp.NetCore\SecureFileUploadExtention\obj\Debug\net6.0\ref\SecureFileUploadExtention.dll

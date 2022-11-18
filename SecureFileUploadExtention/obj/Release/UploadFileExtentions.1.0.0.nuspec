@@ -9,20 +9,20 @@
     <description>a open source package for uploading and validating all file types in C # and .Net Core projects.
 With this package, you will no longer need to write code to upload files and validate them.
 This package includes static methods and parallel programming is used in its coding.</description>
-    <copyright>https://AshkanNoodiDev.com</copyright>
+    <copyright>https://ashkannoori.onrender.com</copyright>
     <tags>File,Upload,Secure,Extentions,Static,Async,Video,Image,pdf,DeleteFile,UploadFileExtention</tags>
     <repository url="https://github.com/ashnoori11/UploadFileExtention_Asp.NetCore" />
     <dependencies>
-      <group targetFramework="net5.0" />
+      <group targetFramework="net6.0" />
     </dependencies>
     <frameworkReferences>
-      <group targetFramework="net5.0">
+      <group targetFramework="net6.0">
         <frameworkReference name="Microsoft.AspNetCore.App" />
       </group>
     </frameworkReferences>
   </metadata>
   <files>
-    <file src="F:\myNugetPackages\SecureFileUpload\SecureFileUploadExtention\SecureFileUploadExtention\bin\Release\net5.0\SecureFileUploadExtention.dll" target="lib\net5.0\SecureFileUploadExtention.dll" />
-    <file src="C:\Users\Ashkan\Desktop\index.png" target="index.png" />
+    <file src="C:\MyNugets\UploadFile\UploadFileExtention_Asp.NetCore\SecureFileUploadExtention\bin\Release\net6.0\SecureFileUploadExtention.dll" target="lib\net6.0\SecureFileUploadExtention.dll" />
+    <file src="C:\Users\smart8\Downloads\uploadFileExtention.svg" target="uploadFileExtention.svg" />
   </files>
 </package>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4UHyFptFG1P6kDMvWu8ITIrlZhuIWmQTaMjcMKURhuA/+3gOHKF2mnJZqqFWFr88xID912WBV8+rlLOKwLwvHQ==",
+  "dgSpecHash": "e7UIjgZ4iujmrXVeeBazdvye9VXnSJjx0l6+wwnMwMEgK2UhL7skpOrKXCpZNE2iJX3IyZlVvZD3Zg5sosLyMg==",
   "success": true,
-  "projectFilePath": "F:\\myNugetPackages\\SecureFileUpload\\SecureFileUploadExtention\\SecureFileUploadExtention\\SecureFileUploadExtention.csproj",
+  "projectFilePath": "C:\\MyNugets\\UploadFile\\UploadFileExtention_Asp.NetCore\\SecureFileUploadExtention\\SecureFileUploadExtention.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
